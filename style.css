@@ -3,6 +3,8 @@ body {
     text-align: center;
     background-image: url("images/table.png");
     background-size: cover;
+    color: white;
+    font-weight: bold;
 }
 
 h1 {
@@ -10,5 +12,6 @@ h1 {
 }
 
 #message-el {
+    font-style: italic;
 
 }
