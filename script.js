@@ -4,7 +4,7 @@
 
 let firstCard = 6;
 let secondCard = 12;
-let sum = firstCard + secondCard + 4
+let sum = firstCard + secondCard+3
 let hasBlackJack = false;
 let isAlive = true;
 let message = ""
@@ -13,16 +13,24 @@ let message = ""
 //2. Flip its valus to false in the appropriate code block
 //1. Declare a variable called message and assign its value to and empty string
 //2. Reassign the message variable to the string we're loggin out
-if (sum <= 20) {
-   message = "Would you like to draw another card?"
-} else if (sum === 21) {
-    message = "Woohoo! You won!"
-    hasBlackJack = true;
-} else {
-    message = "You went over. You're out of the game!"
-    isAlive = false;
+
+
+//2. Creat a startGame() function. Move the conditional below into the function.
+function startGame() {
+    if (sum <= 20) {
+    message = "Would you like to draw another card?"
+    } else if (sum === 21) {
+        message = "Woohoo! You won!"
+        hasBlackJack = true;
+    } else {
+        message = "You went over. You're out of the game!"
+        isAlive = false;
+    }
+    console.log(message)
 }
 
 //Cash OUT!!
 console.log(isAlive)
 console.log(message)
+
+

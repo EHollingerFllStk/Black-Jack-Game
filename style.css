@@ -11,6 +11,17 @@ h1 {
     color: goldenrod;
 }
 
+/* 3. Style the button according to the provide design:;
+text color: #016f32
+*/
+button {
+    color: #016f32;
+    font-weight: bolder;
+    background-color: goldenrod;
+    width: 150px;
+    padding: 5px 25px;
+    border: none;
+}
 #message-el {
     font-style: italic;
 
