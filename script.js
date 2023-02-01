@@ -13,24 +13,30 @@ let message = ""
 //2. Flip its valus to false in the appropriate code block
 //1. Declare a variable called message and assign its value to and empty string
 //2. Reassign the message variable to the string we're loggin out
-
-
 //2. Creat a startGame() function. Move the conditional below into the function.
+
+// 1. Store the message-el paragraph in a var called messageEl
+
+let messageEl = document.getElementById("message-el")
+console.log(messageEl)
+
 function startGame() {
     if (sum <= 20) {
     message = "Would you like to draw another card?"
     } else if (sum === 21) {
-        message = "Woohoo! You won!"
+        message = "You;ve got Black Jack!"
         hasBlackJack = true;
     } else {
-        message = "You went over. You're out of the game!"
+        message = "You went over."
         isAlive = false;
     }
-    console.log(message)
+    //2. Display the message in the messageEl using message.El.tectContent
+    messageEl.textContent = message;
+    //console.log(message)
 }
 
 //Cash OUT!!
-console.log(isAlive)
-console.log(message)
+// console.log(isAlive)
+// console.log(message)
 
 
