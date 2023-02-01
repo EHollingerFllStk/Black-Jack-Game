@@ -20,6 +20,7 @@ button {
     background-color: goldenrod;
     width: 150px;
     padding: 5px 25px;
+    margin: 5px;
     border: none;
     border-radius: 2px;
 }
