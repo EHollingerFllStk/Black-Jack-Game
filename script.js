@@ -4,7 +4,7 @@
 
 let firstCard = 6;
 let secondCard = 12;
-let sum = firstCard + secondCard+3
+let sum = firstCard + secondCard;
 let hasBlackJack = false;
 let isAlive = true;
 let message = ""
@@ -14,13 +14,24 @@ let message = ""
 //1. Declare a variable called message and assign its value to and empty string
 //2. Reassign the message variable to the string we're loggin out
 //2. Creat a startGame() function. Move the conditional below into the function.
-
 // 1. Store the message-el paragraph in a var called messageEl
 
+//2.Store the sum paragraph in a var called sumEl
+//2.Store the card paragraph in a var called cardEl
+
+
 let messageEl = document.getElementById("message-el")
-console.log(messageEl)
+//let sumEl = document.getElementById("sum-el")
+
+let sumEl = document.querySelector("#sum-el")
+let cardsEl = document.getElementById("cards-el")
+//console.log(cardEl)
 
 function startGame() {
+    //3. Render the sum out on the page in this format  --> "Sum: 14"
+    //3. Render the cards out on the page in this format  --> "Cards: "
+    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+    sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
     message = "Would you like to draw another card?"
     } else if (sum === 21) {
