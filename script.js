@@ -2,13 +2,20 @@
 //set thier variables to a random number between 2-11
 //2. Creat a variable, sum and set it to the sum of the 2 cards
 
-let firstCard = 10;
-let secondCard = 4;
-let cards = [firstCard, secondCard]
-let sum = firstCard + secondCard;
+
+let cards = [];
+let sum = 0;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let message = ""
+
+let player = { 
+    name: "Per",
+    chips: 145 
+}
+
+let playerEl = document.getElementById("player-el")
+playerEl.textContent = player.name + ": $" + player.chips
 
 //1. Create a variable called isAlive and assign it to true
 //2. Flip its valus to false in the appropriate code block
@@ -27,7 +34,32 @@ let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.getElementById("cards-el")
 //console.log(cardEl)
 
+console.log(cards)
+
+//Create a function, getRandomCard(), that always returns the number 5 - this is a function declaration an allows you to "hoist" the function to previous lines of code.
+
+//Make this function return a random number between 1 and 13
+function getRandomCard() {
+    let randomCard = Math.floor((Math.random() * 11) + 1);
+    if (randomCard > 10) {
+        return 10
+    } else if (randomCard === 1) {
+        return 11
+    } else {
+        return randomCard
+    }
+    
+    console.log(randomCard)
+    return randomCard
+}
+
+
 function startGame() {
+    isAlive = true
+    let firstCard = getRandomCard();
+    let secondCard = getRandomCard();
+    cards = [firstCard, secondCard];
+    sum = firstCard + secondCard;
     renderGame()
 }
 
@@ -60,10 +92,11 @@ function renderGame() {
 //2. Create a newCard function that logs out "Drawing a new card from the deck"
 
 function newCard() {
-    console.log("Drawing a new card from the deck")
+    //console.log("Drawing a new card from the deck")
     //1. Create a card var and hard code its value to a number 2-11
-    let card = 2;
-
+    //only allow the player to get a new card if she IS alive and does NOT have Blackjack
+    if (isAlive === true && hasBlackJack === false) {
+    let card = getRandomCard(0);
     console.log(card)
     //2. add the new card to the sum var
     sum += card
@@ -72,7 +105,9 @@ function newCard() {
     console.log(cards)
     //3. call the startGame()
     renderGame()
+    }
 }
+
 //Cash OUT!!
 // console.log(isAlive)
 // console.log(message)
